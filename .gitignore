@@ -1,0 +1,23 @@
+### Intellij ###
+.idea/
+*.iml
+*.iws
+
+### Gradle ###
+.gradle
+build/
+gradle/
+gradlew
+gradlew.bat
+
+# Ignore Gradle GUI config
+gradle-app.setting
+
+# Cache of project
+.gradletasknamecache
+
+### Gradle Patch ###
+**/build/
+
+### Log file ###
+*.log
