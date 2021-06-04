@@ -18,6 +18,7 @@ public class GitHubIssueAnnotationsTest extends TestBase{
     steps.goToRepository(repository);
     steps.openIssueTab();
     steps.shouldSeeIssueWithNumber(issue_number);
+    steps.shouldSeeIssueWithName(issue_name);
     steps.makeScreenshot();
   }
 
@@ -29,7 +30,8 @@ public class GitHubIssueAnnotationsTest extends TestBase{
     steps.searchForRepository(repository);
     steps.goToRepository(repository);
     steps.openIssueTab();
-    steps.shouldSeeIssueWithNumber(issue_number + 12345);
+    steps.shouldSeeIssueWithNumber(issue_number);
+    steps.shouldSeeIssueWithName(issue_name + "12345");
     steps.makeScreenshot();
   }
 }

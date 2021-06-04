@@ -41,6 +41,11 @@ public class WebSteps extends TestBase{
     $(withText("#" + number)).should(Condition.visible);
   }
 
+  @Step("Verify Issue with name {name} is visible")
+  public void shouldSeeIssueWithName(String name) {
+    $(withText(name)).should(Condition.visible);
+  }
+
   @Attachment(value = "Screenshot", type = "image/png")
   public byte[] makeScreenshot() {
     return screenshot(OutputType.BYTES);

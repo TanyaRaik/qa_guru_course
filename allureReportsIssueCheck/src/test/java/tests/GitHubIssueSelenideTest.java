@@ -28,6 +28,7 @@ public class GitHubIssueSelenideTest extends TestBase {
         $(By.linkText(repository)).click();
         $(withText("Issues")).click();
         $(withText("#" + issue_number)).should(Condition.visible);
+        $(withText(issue_name)).should(Condition.visible);
     }
 
     @Test
@@ -40,7 +41,8 @@ public class GitHubIssueSelenideTest extends TestBase {
         $(".header-search-input").sendKeys(repository);
         $(".header-search-input").submit();
         $(By.linkText(repository)).click();
-        $(withText("issues")).click();
+        $(withText("Issues")).click();
         $(withText("#" + issue_number)).should(Condition.visible);
+        $(withText(issue_name + "12345")).should(Condition.visible);
     }
 }

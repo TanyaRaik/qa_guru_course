@@ -43,6 +43,11 @@ public class GitHubIssueLambdaStepsTest extends TestBase{
       s.parameter("number", issue_number);
       $(withText("#"+ issue_number)).should(Condition.visible);
     });
+
+    step("Verify Issue with name " + issue_name + " is visible", (s) -> {
+      s.parameter("name", issue_name);
+      $(withText(issue_name)).should(Condition.visible);
+    });
   }
 
   @Test
@@ -71,8 +76,13 @@ public class GitHubIssueLambdaStepsTest extends TestBase{
     });
 
     step("Verify Issue with number " + issue_number + " is visible", (s) -> {
-      s.parameter("number", issue_number + 12345);
-      $(withText("#"+ issue_number + 12345)).should(Condition.visible);
+      s.parameter("number", issue_number);
+      $(withText("#"+ issue_number)).should(Condition.visible);
+    });
+
+    step("Verify Issue with name " + issue_name + "12345" + " is visible", (s) -> {
+      s.parameter("name", issue_name + "12345");
+      $(withText(issue_name + "12345")).should(Condition.visible);
     });
   }
 }
