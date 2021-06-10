@@ -63,7 +63,7 @@ public class CheckFileContentTest {
     @DisplayName("Check docx File")
     void checkDocxTest() throws IOException{
         SelenideLogger.addListener("allure", new AllureSelenide());
-        //String actualData = readDocxFromPath(docxFilePath);
-        //assertThat(actualData, containsString(expectedData));
+        String actualData = readDocxFromPath(docxFilePath).getText();
+        assertThat(actualData, containsString(expectedData));
     }
 }

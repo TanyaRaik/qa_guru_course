@@ -13,6 +13,7 @@ import net.lingala.zip4j.exception.ZipException;
 import org.apache.poi.xwpf.extractor.XWPFWordExtractor;
 import org.apache.poi.xwpf.usermodel.XWPFDocument;
 
+
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -97,5 +98,11 @@ public class Files {
     }
 
     return result;
+  }
+
+  public static XWPFWordExtractor readDocxFromPath(String path) throws IOException {
+    FileInputStream stream = new FileInputStream(path);
+    XWPFDocument document = new XWPFDocument(stream);
+    return new XWPFWordExtractor(document);
   }
 }
