@@ -4,6 +4,7 @@ import com.github.javafaker.Faker;
 import org.junit.jupiter.api.Test;
 import pages.StudentRegistrationFormPage;
 
+import static io.qameta.allure.Allure.step;
 import static utils.RandomUtils.*;
 import static utils.RandomUtils.getRandomMonth;
 
@@ -28,12 +29,19 @@ public class RegistrationFormFirstTest extends TestBase{
 
     @Test
     void fillInStudentRegistrationFormTest() {
-        registrationPage.openPage();
-        fillInFormFields();
-        registrationPage.InitStudentRegistration();
-        registrationPage.checkRegistrationFields(firstName, lastName, userEmail, gender, userNumber, day, month, year,
-                hobby1, fileName, currentAddress, state, city);
+        step("Open students registration form", () -> {
+            registrationPage.openPage();
+        });
 
+        step("Fill in registration form", () -> {
+            fillInFormFields();
+            registrationPage.InitStudentRegistration();
+        });
+
+        step("Check registration form fields", () -> {
+            registrationPage.checkRegistrationFields(firstName, lastName, userEmail, gender, userNumber, day, month, year,
+                    hobby1, fileName, currentAddress, state, city);
+        });
     }
 
     private void fillInFormFields() {
