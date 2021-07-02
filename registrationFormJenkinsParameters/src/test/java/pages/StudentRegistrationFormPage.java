@@ -48,13 +48,11 @@ public class StudentRegistrationFormPage {
   }
 
   public void selectState(String state){
-    $("#state").click();
-    $("#stateCity-wrapper").$(byText(state)).click();
+    $("#react-select-3-input").setValue(state).pressEnter();
   }
 
   public void selectCity(String city){
-    $("#city").click();
-    $("#stateCity-wrapper").$(byText(city)).click();
+    $("#react-select-4-input").setValue(city).pressEnter();
   }
 
   public void selectDateOfBirth(String month, String year, String day){
