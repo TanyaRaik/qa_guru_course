@@ -10,10 +10,7 @@
 # Mobile Tools for Java (J2ME)
 .mtj.tmp/
 
-# Properties files
-*.properties
-
-# Package Files #
+# Package Files
 *.jar
 *.war
 *.nar
@@ -24,7 +21,7 @@
 *.iml
 
 # Project gen files
-.idea
+.idea/
 .allure/
 .gradle/
 allure-results/
@@ -40,3 +37,7 @@ target/
 .vscode
 /gradlew
 /gradlew.bat
+
+# OS generated files
+.DS_store
+._*
